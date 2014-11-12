@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TwitterSearch app</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../dist/sumup-twitter-search.css">
+  </head>
+  <body>
+    <div id="app" class="wrapper">
+    </div>
+
+    <script id="tweets-layout-template" type="text/template">
+      <header class="twitter-search__header">
+        <h1 class="twitter-search__header__title">Tweets containing <strong>#sumup</strong></h1>
+      </header>
+      <section id="tweets-list">
+      </section>
+    </script>
+    <script id="tweet-layout-template" type="text/template">
+      <header class="twitter-search__header">
+        <a class="twitter-search__back" href="/">Show all results</a>
+      </header>
+      <div id="tweet" class="twitter-search__entry">
+      </div>
+      <div id="tweet-interactions" class="twitter-search__interactions">
+      </div>
+    </script>
+    <script id="tweet-view-template" type="text/template">
+      <article class="twit">
+        <header class="tweet__header">
+          <img src="<%=user.profile_image_url%>" class="tweet__user__avatar">
+          <cite><%=user.name%> <small>(@<%=user.screen_name%>)</small> <a href="<%=url%>"><%=from_now()%></a></cite>
+        </header>
+        <p class="tweet__content"><%=text%></p>
+        <% if(complete && media){ %>
+          <% _(media).each(function(media){ %>
+            <img src="<%=media.media_url%>" class="tweet__media_img">
+          <% }) %>      
+        <% } %>
+        <footer class="tweet__interaction">
+          <p>
+            <span><strong><%=retweet_count%></strong> Retweets</span>
+            <span><strong><%=favorite_count%></strong> Favorites</span>
+          </p>
+        </footer>
+      </article>
+    </script>
+    <script id="retweets-view-template" type="text/template">
+      <strong class="retweets__title">Retweeted by:</strong>
+      <ul class="retweets__list"></ul>
+    </script>
+    <script id="retweet-view-template" type="text/template">
+      <div data-user-name="@<%=user.screen_name%>">
+        <img src="<%=user.profile_image_url%>" class="retweet__user__avatar">
+      </div>
+    </script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
+    <script src="../bower_components/backbone.babysitter/lib/backbone.babysitter.js"></script>
+    <script src="../bower_components/backbone.wreqr/lib/backbone.wreqr.js"></script>
+    <script src="../bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+    <script src="../dist/sumup-twitter-search.js"></script>
+    <script src="fixtures.js"></script>
+  </body>
+</html>

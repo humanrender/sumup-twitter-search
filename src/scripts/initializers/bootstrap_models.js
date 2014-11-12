@@ -1,0 +1,1 @@
+App.Tweets = new TweetsCollection();

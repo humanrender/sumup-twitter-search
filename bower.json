@@ -1,0 +1,14 @@
+{
+  "name": "sumup-twitter-search",
+  "private": true,
+  "main": ["dist/sumup-twitter-search.js", "dist/sumup-twitter-search.css"],
+  "ignore": ["src/", "examples/"],
+  "dependencies": {
+    "jquery": "2.0.x",
+    "underscore": "latest",
+    "handlebars": "latest",
+    "backbone": "~1.1.2",
+    "backbone.marionette": "~2.2.2",
+    "moment": "~2.8.3"
+  }
+}
