@@ -1,0 +1,30 @@
+{
+  "name": "sumup-twitter-search",
+  "private": true,
+  "main": [
+    "dist/sumup-twitter-search.js",
+    "dist/sumup-twitter-search.css"
+  ],
+  "ignore": [
+    "src/",
+    "examples/"
+  ],
+  "dependencies": {
+    "jquery": "2.0.x",
+    "underscore": "latest",
+    "handlebars": "latest",
+    "backbone": "~1.1.2",
+    "backbone.marionette": "~2.2.2",
+    "moment": "~2.8.3"
+  },
+  "homepage": "https://github.com/humanrender/sumup-twitter-search",
+  "_release": "af95b01a72",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "af95b01a724422fc14b71cf3330a110920e06e13"
+  },
+  "_source": "git://github.com/humanrender/sumup-twitter-search.git",
+  "_target": "*",
+  "_originalSource": "humanrender/sumup-twitter-search"
+}
