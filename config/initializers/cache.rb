@@ -1,1 +1,1 @@
-Rails.application.config.action_controller.perform_caching = true
+# Rails.application.config.action_controller.perform_caching = true
