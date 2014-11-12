@@ -3,6 +3,7 @@
 $title-size: 20px;
 
 $padding: 20px;
+$content_break: 500px;
 
 $text: #646C72;
 $main: #12D2AD;
@@ -23,114 +24,131 @@ body{
 }
 
 .wrapper{
-  max-width: 640px;
+  $width: 640px;
+  max-width: $width;
   margin: 50px auto 0;
   background-color: #fff;
   border-top:4px solid $main;
-}
-
-.twitter-search__header{
-  background-color: $darkest;
-  padding: 20px;
-  &__title{
-    font-size: 2.5em;
-    margin: 0;
-    color: $lightest;
-    font-weight: normal;
+  @media (max-width: $width){
+    margin-top: 0; 
   }
 }
 
-.twitter-search__list{
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-  li{
-    border-top: 2px solid $ui;
-    padding:10px 10px;
-    &:first-child{
-      border-top: none;
-      padding-top: 0;
+.twitter-search{
+  &__header{
+    background-color: $darkest;
+    padding: 20px;
+    &__title{
+      font-size: 2.5em;
+      margin: 0;
+      color: $lightest;
+      font-weight: normal;
     }
-  }
-}
-
-.twitter-search__entry{
-  font-size: 1.5em;
-  padding: 20px 30px 10px;
-  border-bottom: 2px solid $ui;
+  } // twitter-search header
   
-}
+  &__list{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    li{
+      border-top: 2px solid $ui;
+      padding:10px 10px;
+      cursor: pointer;
+      &:first-child{
+        border-top: none;
+        padding-top: 0;
+      }
+    }
+  } // twitter-search list
 
-.twitter-search__interactions{
-  background-color: lighten($ui, 11);
-}
+  &__entry{
+    font-size: 1.5em;
+    padding: 20px 30px 10px;
+    border-bottom: 2px solid $ui; 
+    @media (max-width: $content_break){
+      font-size: 1em;
+    }
+  } // twitter-search entry
 
-.twitter-search__back{
-  color: $lightest;
-  font-size: 1.5em;
-  text-decoration: none;
-  padding: 5px 10px 8px;
-  margin-bottom: -1px;
-  border-radius: 30px;
-  background-color: $highlight;
-  display: inline-block;
-}
+  &__interactions{
+    background-color: lighten($ui, 11);
+  } // twitter-search interactions
 
-.twit{
-  position: relative;
-  padding-left: 58px;
-}
-
-.tweet__header{
-  font-size:1.2em;
-  cite{
-    font-style: normal;
-    font-weight: bold;
-  }
-  small, a{
-    font-weight: normal;
-  }
-  a{
-    color: $main;
+  &__back{
+    color: $lightest;
+    font-size: 1.5em;
     text-decoration: none;
-  }
-}
-
-.tweet__content{
-  font-size: 1.5em;
-  margin: 5px 0;
-}
-
-.tweet__user__avatar{
-  position: absolute;
-  left: 0;
-  top: .25em;
-}
-
-.tweet__interaction{
-  color: $highlight;
-  p{
-    margin:0;
-  }
-  p > * + *:before{
-    content: "|";
-    margin:0 7px 0 5px;
+    padding: 5px 10px 8px;
+    margin-bottom: -1px;
+    border-radius: 30px;
+    background-color: $highlight;
     display: inline-block;
-  }
+  } // twitter-search back
 }
 
 .tweet{
+  $avatar_width: 58px;
+  position: relative;
+  padding-left: $avatar_width;
+  @media (max-width: $content_break){
+    padding-left: 0;
+  }
+  &__header{
+    font-size:1.2em;
+    cite{
+      font-style: normal;
+      font-weight: bold;
+    }
+    small{
+      display: block;
+      margin: 0.02em 0;
+    }
+    small, a{
+      font-weight: normal;
+    }
+    a{
+      color: $main;
+      text-decoration: none;
+    }
+    @media (max-width: $content_break){
+      min-height: 48px;
+      margin-bottom: 10px;
+      padding-left: $avatar_width;
+      padding-top: 3px;
+      font-size:1.5em;
+    }
+  } // tweet header
+  &__content{
+    font-size: 1.5em;
+    margin: 5px 0;
+    @media (max-width: $content_break){
+      font-size: 2em;
+    }
+  } // tweet content
+  &__user__avatar{
+    position: absolute;
+    left: 0;
+    top: .25em;
+  } // tweet user_avatar
+  &__interaction{
+    color: $highlight;
+    p{
+      margin:0;
+    }
+    p > * + *:before{
+      content: "|";
+      margin:0 7px 0 5px;
+      display: inline-block;
+    }
+    @media (max-width: $content_break){
+      font-size: 1.5em;
+    }
+  } // tweet user_interaction
   &__media_img{
     max-width: 100%;
     display: block;
     margin: 10px 0;
-  }
-}
-
-.retweet{
-  &__user__avatar{
-
-  }
+  } // tweet media_img
 }
 
 .retweets{
@@ -138,15 +156,19 @@ body{
   &__list{
     padding: 0;
     list-style: none;
-  }
+  } // retweets list
   &__title{
     font-size: 1.5em;
-  }
+  } // retweets title
   &__list__item{
     display: inline-block;
     width: 30px;
     margin-right: 5px;
     margin-bottom: 5px;
+    @media (max-width: $content_break){
+      width:50px;
+      font-size: 1.2em;
+    }
     img{
       max-width: 100%;
       display: block;
@@ -173,5 +195,5 @@ body{
     [data-user-name]:hover:after{
       display: block;
     }
-  }
+  } // retweets list_item
 }

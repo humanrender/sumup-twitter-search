@@ -11,6 +11,9 @@ body {
   margin: 50px auto 0;
   background-color: #fff;
   border-top: 4px solid #12D2AD; }
+  @media (max-width: 640px) {
+    .wrapper {
+      margin-top: 0; } }
 
 .twitter-search__header {
   background-color: #646C72;
@@ -20,26 +23,26 @@ body {
     margin: 0;
     color: #fff;
     font-weight: normal; }
-
 .twitter-search__list {
   list-style: none;
   padding: 20px;
   margin: 0; }
   .twitter-search__list li {
     border-top: 2px solid #D8D8D8;
-    padding: 10px 10px; }
+    padding: 10px 10px;
+    cursor: pointer; }
     .twitter-search__list li:first-child {
       border-top: none;
       padding-top: 0; }
-
 .twitter-search__entry {
   font-size: 1.5em;
   padding: 20px 30px 10px;
   border-bottom: 2px solid #D8D8D8; }
-
+  @media (max-width: 500px) {
+    .twitter-search__entry {
+      font-size: 1em; } }
 .twitter-search__interactions {
   background-color: #f4f4f4; }
-
 .twitter-search__back {
   color: #fff;
   font-size: 1.5em;
@@ -50,43 +53,57 @@ body {
   background-color: #F9785B;
   display: inline-block; }
 
-.twit {
+.tweet {
   position: relative;
   padding-left: 58px; }
-
-.tweet__header {
-  font-size: 1.2em; }
-  .tweet__header cite {
-    font-style: normal;
-    font-weight: bold; }
-  .tweet__header small, .tweet__header a {
-    font-weight: normal; }
-  .tweet__header a {
-    color: #12D2AD;
-    text-decoration: none; }
-
-.tweet__content {
-  font-size: 1.5em;
-  margin: 5px 0; }
-
-.tweet__user__avatar {
-  position: absolute;
-  left: 0;
-  top: 0.25em; }
-
-.tweet__interaction {
-  color: #F9785B; }
-  .tweet__interaction p {
-    margin: 0; }
-  .tweet__interaction p > * + *:before {
-    content: "|";
-    margin: 0 7px 0 5px;
-    display: inline-block; }
-
-.tweet__media_img {
-  max-width: 100%;
-  display: block;
-  margin: 10px 0; }
+  @media (max-width: 500px) {
+    .tweet {
+      padding-left: 0; } }
+  .tweet__header {
+    font-size: 1.2em; }
+    .tweet__header cite {
+      font-style: normal;
+      font-weight: bold; }
+    .tweet__header small {
+      display: block;
+      margin: 0.02em 0; }
+    .tweet__header small, .tweet__header a {
+      font-weight: normal; }
+    .tweet__header a {
+      color: #12D2AD;
+      text-decoration: none; }
+    @media (max-width: 500px) {
+      .tweet__header {
+        min-height: 48px;
+        margin-bottom: 10px;
+        padding-left: 58px;
+        padding-top: 3px;
+        font-size: 1.5em; } }
+  .tweet__content {
+    font-size: 1.5em;
+    margin: 5px 0; }
+    @media (max-width: 500px) {
+      .tweet__content {
+        font-size: 2em; } }
+  .tweet__user__avatar {
+    position: absolute;
+    left: 0;
+    top: 0.25em; }
+  .tweet__interaction {
+    color: #F9785B; }
+    .tweet__interaction p {
+      margin: 0; }
+    .tweet__interaction p > * + *:before {
+      content: "|";
+      margin: 0 7px 0 5px;
+      display: inline-block; }
+    @media (max-width: 500px) {
+      .tweet__interaction {
+        font-size: 1.5em; } }
+  .tweet__media_img {
+    max-width: 100%;
+    display: block;
+    margin: 10px 0; }
 
 .retweets {
   padding: 5px 30px 0; }
@@ -100,6 +117,10 @@ body {
     width: 30px;
     margin-right: 5px;
     margin-bottom: 5px; }
+    @media (max-width: 500px) {
+      .retweets__list__item {
+        width: 50px;
+        font-size: 1.2em; } }
     .retweets__list__item img {
       max-width: 100%;
       display: block; }
