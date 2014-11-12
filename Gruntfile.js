@@ -16,7 +16,7 @@ module.exports = function(grunt){
         tasks: ["build:scripts"],
       },
       stylesheets: {
-        files: "src/site/stylesheets/**/*.scss",
+        files: "src/stylesheets/**/*.scss",
         tasks: ["sass"],
       }
     },
