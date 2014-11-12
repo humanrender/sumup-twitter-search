@@ -43,4 +43,5 @@ gem 'omniauth-twitter'
 
 gem 'twitter'
 gem 'bower-rails', '~> 0.9.1'
-gem 'dotenv-rails'
+gem 'dotenv-rails', :group => :development
+gem "pg", :group => :production
