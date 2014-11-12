@@ -1,6 +1,7 @@
 {
   "name": "sumup-twitter-search-app",
   "dependencies":{
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "sumup-twitter-search": "humanrender/sumup-twitter-search"
   }
 }
