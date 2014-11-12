@@ -1,0 +1,6 @@
+{
+  "name": "sumup-twitter-search-app",
+  "dependencies":{
+    "moment": "~2.8.3"
+  }
+}

@@ -1,0 +1,48 @@
+<div id="app" class="wrapper">
+</div>
+
+<script id="tweets-layout-template" type="text/template">
+  <header class="twitter-search__header">
+    <h1 class="twitter-search__header__title">Tweets containing <strong>#sumup</strong></h1>
+  </header>
+  <section id="tweets-list">
+  </section>
+</script>
+<script id="tweet-layout-template" type="text/template">
+  <header class="twitter-search__header">
+    <a class="twitter-search__back" href="/">Show all results</a>
+  </header>
+  <div id="tweet" class="twitter-search__entry">
+  </div>
+  <div id="tweet-interactions" class="twitter-search__interactions">
+  </div>
+</script>
+<script id="tweet-view-template" type="text/template">
+  <article class="twit">
+    <header class="tweet__header">
+      <img src="<%%=user.profile_image_url%>" class="tweet__user__avatar">
+      <cite><%%=user.name%> <small>(@<%%=user.screen_name%>)</small> <a href="<%%=url%>"><%%=from_now()%></a></cite>
+    </header>
+    <p class="tweet__content"><%%=text%></p>
+    <%% if(complete && media){ %>
+      <%% _(media).each(function(media){ %>
+        <img src="<%%=media.media_url%>" class="tweet__media_img">
+      <%% }) %>      
+    <%% } %>
+    <footer class="tweet__interaction">
+      <p>
+        <span><strong><%%=retweet_count%></strong> Retweets</span>
+        <span><strong><%%=favorite_count%></strong> Favorites</span>
+      </p>
+    </footer>
+  </article>
+</script>
+<script id="retweets-view-template" type="text/template">
+  <strong class="retweets__title">Retweeted by:</strong>
+  <ul class="retweets__list"></ul>
+</script>
+<script id="retweet-view-template" type="text/template">
+  <div data-user-name="@<%%=user.screen_name%>">
+    <img src="<%%=user.profile_image_url%>" class="retweet__user__avatar">
+  </div>
+</script>
