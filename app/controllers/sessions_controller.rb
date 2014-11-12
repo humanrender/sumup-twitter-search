@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
-    session[:auth] = auth
-    session[:twitter_token] = session["auth"]["credentials"]["token"]
-    session[:twitter_secret] = session["auth"]["credentials"]["secret"]
+    session[:twitter_token] = auth["credentials"]["token"]
+    session[:twitter_secret] = auth["credentials"]["secret"]
     redirect_to root_url, :notice => "Signed in!"
   end
 
   def destroy
-    session[:twitter_token] = session[:twitter_secret] = nil
+    session[:twitter_token] = nil
+    session[:twitter_secret] = nil
     redirect_to root_url, :notice => "Signed out!"
   end
 end
