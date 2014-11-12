@@ -15,5 +15,4 @@
 /log/*.log
 /tmp
 .ruby-gemset
-config/secrets.yml
 .env
